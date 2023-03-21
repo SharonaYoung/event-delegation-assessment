@@ -3,30 +3,20 @@ const submit = document.querySelector('#submit');
 const nameInput = document.querySelector('#name');
 const button = document.querySelectorAll('button');
 
+// array to hold names
 const names = [];
  
 mainEl.addEventListener('click', function(event) {
     event.preventDefault();
-    if(event.target.matches("#submit")) {
-       console.log("button");
-       
+    if(event.target.matches("#enterName")) {
+           
     // add button when submit is clicked
     const nameButton = document.createElement("button");
-    nameButton.textContent = nameInput.value
-    
-    if(names.includes(nameInput.value)) {
-        console.log("repeat");
-        
-        // add button next to existing button with the same name     
-    }
-    
+    // place name entered on button
+    nameButton.textContent = nameInput.value        
     mainEl.append(nameButton);
-
+    // add name to array
     names.push(nameInput.value);
-    console.log(names);
     nameInput.value = "";
     }
 });
-    
-
-    
